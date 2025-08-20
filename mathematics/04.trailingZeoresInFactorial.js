@@ -6,4 +6,6 @@ function trailingZeroesInFactorial(n) {
   return count;
 }
 
+console.log(trailingZeroesInFactorial(25)); //6
+console.log(trailingZeroesInFactorial(125)); //31
 console.log(trailingZeroesInFactorial(251)); //62
