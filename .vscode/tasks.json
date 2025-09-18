@@ -1,26 +1,46 @@
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "compile and run",
+//             "type": "shell",
+//             "command": "g++",
+//             "args": [
+//                 "-std=c++17",
+//                 "-o",
+//                 "${fileDirname}/${fileBasenameNoExtension}.out",
+//                 "${file}",
+//                 "&&",
+//                 "${fileDirname}/${fileBasenameNoExtension}.out",
+//                 "<",
+//                 "input.txt",
+//                 ">",
+//                 "output.txt"
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
+
 {
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile and run",
+            "label": "compile and run java",
             "type": "shell",
-            "command": "g++",
+            "command": "bash",
             "args": [
-                "-std=c++17",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
-                "${file}",
-                "&&",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
-                "<",
-                "input.txt",
-                ">",
-                "output.txt"
+                "-c",
+                "javac \"${file}\" && java -cp \"${fileDirname}\" ${fileBasenameNoExtension} < input.txt > output.txt"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": "$javac"
         }
     ]
 }

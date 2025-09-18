@@ -95,10 +95,50 @@ void pattern7(int n)
   }
 }
 
+void pattern8(int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = 0; j < i; j++)
+    {
+      cout << ' ';
+    }
+
+    for (int j = 0; j < 2 * n - (2 * i + 1); j++)
+    {
+      cout << "*";
+    }
+
+    for (int j = 0; j < i; j++)
+    {
+      cout << ' ';
+    }
+    cout << endl;
+  }
+}
+
+void pattern9(int n)
+{
+  pattern7(n);
+  pattern8(n);
+}
+
+void pattern10(int n)
+{
+  for (int i = 0; i < 2 * n - 1; i++)
+  {
+    for (int j = 0; j <= min(2 * n - i - 2, i); j++)
+    {
+      cout << "*";
+    }
+    cout << endl;
+  }
+}
+
 int main()
 {
   int num;
   cin >> num;
-  pattern7(num);
+  pattern4(num);
   return 0;
 }
